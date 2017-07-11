@@ -1,6 +1,6 @@
-pplications:
-- name: rails-sample
-  memory: 256M
-  instances: 1
-  path: .
-  command: bundle exec rake db:migrate && bundle exec rails s -p $PORT
+applications:
+  - name: rails-sample
+    memory: 256M
+    instances: 1
+    path: .
+    command: bundle exec rake db:migrate && bundle exec rails s -p $PORT
