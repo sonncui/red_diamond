@@ -1,5 +1,5 @@
 applications:
-  - name: rails-sample
+  - name: red_diamond
     memory: 256M
     instances: 1
     path: .
