@@ -13,16 +13,19 @@
   </thead>
 
   <tbody>
-    <% @plants.each do |plant| %>
-      <tr>
-        <td><%= plant.name %></td>
-        <td><%= plant.description %></td>
-        <td><%= plant.picture %></td>
-        <td><%= link_to 'Show', plant %></td>
-        <td><%= link_to 'Edit', edit_plant_path(plant) %></td>
-        <td><%= link_to 'Destroy', plant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render partial: 'plants/plant', collection: @plants, cached: true %>
+    <!--<% @plants.each do |plant| %>-->
+      <!--<% cache plant do %>-->
+        <!--<tr>-->
+          <!--<td><%= plant.name %></td>-->
+          <!--<td><%= plant.description %></td>-->
+          <!--<td><%= plant.picture %></td>-->
+          <!--<td><%= link_to 'Show', plant %></td>-->
+          <!--<td><%= link_to 'Edit', edit_plant_path(plant) %></td>-->
+          <!--<td><%= link_to 'Destroy', plant, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+        <!--</tr>-->
+      <!--<% end %>-->
+    <!--<% end %>-->
   </tbody>
 </table>
 
