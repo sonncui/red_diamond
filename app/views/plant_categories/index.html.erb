@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Plant Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plant_categories.each do |plant_category| %>
+      <tr>
+        <td><%= plant_category.name %></td>
+        <td><%= render partial: 'plants/plant', collection: plant_category.plants %></td>
+        <td><%= link_to 'Show', plant_category %></td>
+        <td><%= link_to 'Edit', edit_plant_category_path(plant_category) %></td>
+        <td><%= link_to 'Destroy', plant_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plant Category', new_plant_category_path %>

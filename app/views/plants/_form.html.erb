@@ -26,6 +26,11 @@
     <%= form.file_field :picture, id: :plant_picture %>
   </div>
 
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.collection_select :plant_category_id, PlantCategory.all, :id, :name %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

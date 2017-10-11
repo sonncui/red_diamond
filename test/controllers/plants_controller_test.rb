@@ -3,6 +3,7 @@ require 'test_helper'
 class PlantsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @plant = plants(:one)
+    @plant_category = plant_categories(:one)
   end
 
   test "should get index" do
@@ -17,7 +18,7 @@ class PlantsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create plant" do
     assert_difference('Plant.count') do
-      post plants_url, params: { plant: { description: @plant.description, name: @plant.name, picture: @plant.picture } }
+      post plants_url, params: { plant: { description: @plant.description, name: @plant.name, picture: @plant.picture, plant_category_id: @plant_category.id.to_s } }
     end
 
     assert_redirected_to plant_url(Plant.last)
@@ -34,7 +35,7 @@ class PlantsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update plant" do
-    patch plant_url(@plant), params: { plant: { description: @plant.description, name: @plant.name, picture: @plant.picture } }
+    patch plant_url(@plant), params: { plant: { description: @plant.description, name: @plant.name, picture: @plant.picture, plant_category_id: @plant_category.id.to_s } }
     assert_redirected_to plant_url(@plant)
   end
 
